@@ -1,6 +1,12 @@
 function selectWords() {
     var selected_div = document.getElementById('selected-words');
     selected_div.style.display = 'block';
+    var tale_reg_div = document.getElementById('gen-tale-button');
+    tale_reg_div.style.display = 'block';
+    var tale_div = document.getElementById('tale');
+    tale_div.textContent = 'Typing...';
+    tale_div.style.display = 'none';
+
 
     $.get('/get_words', function(words) {
         // tmp_words = {
@@ -37,7 +43,7 @@ function selectWords() {
             // Display the actual response
             // document.getElementById('generated-response').textContent = 'Generated Response: ' + response.response;
             // document.getElementById('tale').classList.remove('response-block')
-            // document.getElementById('tale').textContent = '';
+            document.getElementById('tale').textContent = '';
             document.getElementById('tale').insertAdjacentHTML('beforeend', response.response)
         });
     });
@@ -50,4 +56,9 @@ function showDef(idx) {
     } else {
         def.style.display = 'none';
     }
+}
+
+function showTale() {
+    var tale = document.getElementById('tale');
+    tale.style.display = 'block';
 }

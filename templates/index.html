@@ -43,9 +43,8 @@
             </div>
 
         </div>
-        <div class="tale" id="tale">
-            <button class="gen-tale-button">Generate Tale</button>
-        </div>
+        <button class="gen-tale-button" id="gen-tale-button" style="display:none" onclick="showTale()">Generate Tale</button>
+        <div class="tale" id="tale" style="display:none">Typing...</div>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script type="text/javascript" src="{{url_for('static', filename='script.js')}}"></script>
 </body>
