@@ -4,13 +4,20 @@ import openai
 from flask import Flask, render_template, jsonify
 import os
 
+# global var
+current_words = []
+all_words = []
+
 app = Flask(__name__)
 
-with open('words.txt', 'r') as f:
+# setup
+with open('data/words.txt', 'r') as f:
     all_words = [line.strip() for line in f]
 
 openai.api_key = os.environ.get('OPENAI_KEY')
 
+
+# routes
 @app.route('/')
 def index():
     return render_template('index.html')

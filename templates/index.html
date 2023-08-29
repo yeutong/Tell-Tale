@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ChatGPT Response Generator</title>
+    <title>Tell Tale</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1>ChatGPT Response Generator</h1>
+        <h1>Tell Tale: A short story generator for GRE</h1>
         <button class="generate-button" onclick="selectWords()">Select 5 words</button>
-        <div id="selected-words"></div>
-        <div id="generated-response"></div>
+        <div id="selected-words">
+            <button class="word-button" id="word1" onclick="showDef(1)"></button>
+            <div id="definition1"></div>
+            <button class="word-button" id="word2" onclick="showDef(2)"></button>
+            <div id="definition2"></div>
+            <button class="word-button" id="word3" onclick="showDef(3)"></button>
+            <div id="definition3"></div>
+            <button class="word-button" id="word4" onclick="showDef(4)"></button>
+            <div id="definition4"></div>
+            <button class="word-button" id="word5" onclick="showDef(5)"></button>
+            <div id="definition5"></div>
+        </div>
+        <div id="defnitions"></div>
+        <div id="tale"></div>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script type="text/javascript" src="{{url_for('static', filename='script.js')}}"></script> 
-
+        <script type="text/javascript" src="{{url_for('static', filename='script.js')}}"></script>
 </body>
 </html>

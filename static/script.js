@@ -17,3 +17,12 @@ function selectWords() {
         });
     });
 }
+
+function showDef(idx) {
+    var def = document.getElementById('definition' + idx);
+    if (def.style.display == 'none') {
+        def.style.display = 'block';
+    } else {
+        def.style.display = 'none';
+    }
+}
