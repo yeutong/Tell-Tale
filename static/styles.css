@@ -11,7 +11,7 @@ body {
     padding: 20px;
     background-color: white;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
@@ -27,6 +27,8 @@ h1 {
     border-radius: 4px;
     font-size: 16px;
     line-height: 1.5;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+
 }
 
 .select-button {
@@ -40,6 +42,7 @@ h1 {
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .select-button:hover {
@@ -59,6 +62,8 @@ h1 {
     font-size: 16px;
     font-weight: bold;
     transition: background-color 0.3s;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+
 }
 
 .word-button:hover {
@@ -72,12 +77,13 @@ h1 {
     border-radius: 4px;
     font-size: 16px;
     line-height: 1.5;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .gen-tale-button {
     display: block;
     margin: 0 auto;
-    margin-bottom: 20px;
+    margin-top: 30px;
     padding: 10px 20px;
     background-color: #007bff;
     color: white;
@@ -87,10 +93,11 @@ h1 {
     font-size: 16px;
     font-weight: bold;
     transition: background-color 0.3s;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .tale {
-    margin-top: 50px;
+    margin-top: 20px;
     border: 2px solid #eaeaea; 
     padding: 20px; 
     border-radius: 10px; 
