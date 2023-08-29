@@ -25,8 +25,20 @@ def index():
 # functions wrapped by routes
 @app.route('/get_words', methods=['GET'])
 def get_words():
-    selected_words = random.sample(all_words, 5)
-    return jsonify(selected_words)
+    """return: {<word1>: <def1>, ...}"""
+    selected_words = random.sample(all_words, 5) # list of strings ['word1', 'word2', ...]
+    defs = [get_def(word) for word in selected_words] # list of jsons
+
+    word_and_def = dict(zip(selected_words, defs)) # dict of {word: def}
+    return jsonify(word_and_def)
+
+def get_def(word):
+    # get definition of word from static/data/definitions/<word>.json
+    word = word.replace(' ', '_')
+    with open(f'static/data/definitions/{word}.json', 'r') as f:
+        data = json.load(f)
+        print(data)
+    return data
 
 @app.route('/generate_response/<words>', methods=['GET'])
 def generate_response(words):
