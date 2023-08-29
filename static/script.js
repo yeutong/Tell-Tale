@@ -1,25 +1,28 @@
 function selectWords() {
+    var selected_div = document.getElementById('selected-words');
+    selected_div.style.display = 'block';
+
     $.get('/get_words', function(words) {
-        var selected_div = document.getElementById('selected-words');
-        selected_div.style.display = 'block';
-        for (var i = 0; i < words.length; i++) {
-            var word = words[i];
-            var word_div = document.getElementById('word' + i);
+        // tmp_words = {
+        //     "word1": {"noun": ["a person, place, or thing"], "verb": ["an action"]},
+        //     "word2": {"noun": ["a person, place, or thing"], "verb": ["an action"]}, ...
+        // }
+        var idx = 0;
+        for (var word in words) {
+            var word_div = document.getElementById('word' + idx);
             word_div.textContent = word;
-            var def_file = 'static/data/definitions/' + word.replace(' ', '_') + '.json';
-            var def_div = document.getElementById('definition' + i);
-            def_div.innerHTML = '<strong>' + word + '</strong>: ';
-            fetch(def_file)
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                // for (var pos in data) {
-                //     var defs = data[pos];
-                //     for (var j = 0; j < defs.length; j++) {
-                //         def_div.innerHTML += '<p>' + pos + ': ' + defs[j] + '</p>';
-                //     }
-                // }
-            });
+            var def_div = document.getElementById('definition' + idx);
+            def_div.innerHTML = '';
+            for (var pos in words[word]) {
+                def_div.innerHTML += '<p><strong>' + pos + '</strong></p>';
+                def_div.innerHTML += '<ul>';
+                var defs = words[word][pos];
+                for (var i = 0; i < defs.length; i++) {
+                    def_div.innerHTML += '<li>' + defs[i] + '</li>';
+                }
+                def_div.innerHTML += '</ul>';
+            }
+            idx++;
         }
         // var selectedWords = words.join(', ');
         // document.getElementById('selected-words').classList.add('response-block');

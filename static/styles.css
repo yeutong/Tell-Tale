@@ -49,22 +49,24 @@ h1 {
 .word-button {
     display: block;
     margin: 0 auto;
+    margin-top: 10px;
     padding: 10px 20px;
-    background-color: #2fff00;
+    background-color: #02a64e;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    font-weight: bold;
     transition: background-color 0.3s;
 }
 
 .word-button:hover {
-    background-color: #00b300;
+    background-color: #028c42;
 }
 
 .def-block {
-    margin-top: 20px;
+    margin-bottom: 20px;
     padding: 10px;
     background-color: #f9f9f9;
     border-radius: 4px;
