@@ -40,16 +40,10 @@ def get_def(word):
         print(data)
     return data
 
-@app.route('/generate_response/<words>', methods=['GET'])
-def generate_response(words):
-    prompt = f"""Give the following five words: {words}, make a short story based on them. Your response should be formatted in HTML and follow the template below. 
-
-<div style="border: 2px solid #eaeaea; padding: 20px; border-radius: 10px; background-color: #f7f7f7; font-family: Arial, sans-serif; box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);">
-    
-    <h2 style="margin-top: 20px;">Story:</h2>
-    <p>Your concise story of maximum 100 words here, incorporating the words from the vocabulary section and highlight them using bold font.</p>
-</div> """
-
+@app.route('/generate_tale/<words>', methods=['GET'])
+def generate_tale(words):
+    prompt = f"Given the following five words: {words}, make a short story using all of the five words. Only reply with the story itself, with a maximum of 100 words."
+    prompt += "\nPlease highlight the words in bold in your story using the following format: <strong>word</strong>."
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",  # Use gpt-3.5-turbo model
         messages=[

@@ -7,8 +7,10 @@ function selectWords() {
         //     "word1": {"noun": ["a person, place, or thing"], "verb": ["an action"]},
         //     "word2": {"noun": ["a person, place, or thing"], "verb": ["an action"]}, ...
         // }
+        var selectedWords = []
         var idx = 0;
         for (var word in words) {
+            selectedWords.push(word);
             var word_div = document.getElementById('word' + idx);
             word_div.textContent = word;
             var def_div = document.getElementById('definition' + idx);
@@ -24,20 +26,20 @@ function selectWords() {
             }
             idx++;
         }
-        // var selectedWords = words.join(', ');
+        var selectedWords = selectedWords.join(', ');
         // document.getElementById('selected-words').classList.add('response-block');
         // document.getElementById('selected-words').innerHTML = '<strong>Selected Words</strong>: ' + selectedWords;
         // Display "Generating response..." placeholder
-        // document.getElementById('generated-response').classList.add('response-block');
-        // document.getElementById('generated-response').textContent = 'Generating response...';
+        // document.getElementById('tale').classList.add('tale');
+        // document.getElementById('tale').textContent = 'Generating response...';
         
-        // $.get('/generate_response/' + encodeURIComponent(selectedWords), function(response) {
-        //     // Display the actual response
-        //     // document.getElementById('generated-response').textContent = 'Generated Response: ' + response.response;
-        //     document.getElementById('generated-response').classList.remove('response-block')
-        //     document.getElementById('generated-response').textContent = '';
-        //     document.getElementById('generated-response').insertAdjacentHTML('afterend', response.response)
-        // });
+        $.get('/generate_tale/' + encodeURIComponent(selectedWords), function(response) {
+            // Display the actual response
+            // document.getElementById('generated-response').textContent = 'Generated Response: ' + response.response;
+            // document.getElementById('tale').classList.remove('response-block')
+            // document.getElementById('tale').textContent = '';
+            document.getElementById('tale').insertAdjacentHTML('beforeend', response.response)
+        });
     });
 }
 

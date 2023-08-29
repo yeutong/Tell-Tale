@@ -74,11 +74,27 @@ h1 {
     line-height: 1.5;
 }
 
-.tale {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #f9f9f9;
+.gen-tale-button {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
     border-radius: 4px;
+    cursor: pointer;
     font-size: 16px;
-    line-height: 1.5;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.tale {
+    margin-top: 50px;
+    border: 2px solid #eaeaea; 
+    padding: 20px; 
+    border-radius: 10px; 
+    background-color: #f7f7f7; 
+    font-family: Arial, sans-serif; 
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
