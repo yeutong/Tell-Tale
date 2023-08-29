@@ -1,3 +1,28 @@
+@media (max-width: 768px) {
+    h1 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .container {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    .selected-words, .def-block, .tale {
+        font-size: 14px;
+    }
+
+    .select-button, .word-button, .gen-tale-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .tale {
+        font-size: 14px;
+    }
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
