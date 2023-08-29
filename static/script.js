@@ -9,10 +9,6 @@ function selectWords() {
 
 
     $.get('/get_words', function(words) {
-        // tmp_words = {
-        //     "word1": {"noun": ["a person, place, or thing"], "verb": ["an action"]},
-        //     "word2": {"noun": ["a person, place, or thing"], "verb": ["an action"]}, ...
-        // }
         var selectedWords = []
         var idx = 0;
         for (var word in words) {
@@ -22,7 +18,7 @@ function selectWords() {
             var def_div = document.getElementById('definition' + idx);
             def_div.innerHTML = '';
             for (var pos in words[word]) {
-                def_div.innerHTML += '<p><strong>' + pos + '</strong></p>';
+                def_div.innerHTML += '<button class="audio-button" onclick="playAudio(' + idx + ')"><strong>' + pos + '</strong></button>';
                 def_div.innerHTML += '<ul>';
                 var defs = words[word][pos];
                 for (var i = 0; i < defs.length; i++) {
@@ -33,20 +29,18 @@ function selectWords() {
             idx++;
         }
         var selectedWords = selectedWords.join(', ');
-        // document.getElementById('selected-words').classList.add('response-block');
-        // document.getElementById('selected-words').innerHTML = '<strong>Selected Words</strong>: ' + selectedWords;
-        // Display "Generating response..." placeholder
-        // document.getElementById('tale').classList.add('tale');
-        // document.getElementById('tale').textContent = 'Generating response...';
         
         $.get('/generate_tale/' + encodeURIComponent(selectedWords), function(response) {
-            // Display the actual response
-            // document.getElementById('generated-response').textContent = 'Generated Response: ' + response.response;
-            // document.getElementById('tale').classList.remove('response-block')
             document.getElementById('tale').textContent = '';
             document.getElementById('tale').insertAdjacentHTML('beforeend', response.response)
         });
     });
+}
+
+function playAudio(idx) {
+    var word = document.getElementById('word' + idx).textContent;
+    var audio = new Audio('static/data/audio/' + word + '.mp3');
+    audio.play();
 }
 
 function showDef(idx) {
