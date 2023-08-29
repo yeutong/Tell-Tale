@@ -2,23 +2,46 @@
 <html>
 <head>
     <title>Tell Tale</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <div class="container">
+        <!-- <i onclick="document.getElementById('sound1').play()" class='fa fa-cloud'>testing</i>
+        <audio id="sound1">
+            <source src="/static/data/audio/abase.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio> -->
+
+
         <h1>Tell Tale: A short story generator for GRE</h1>
         <button class="select-button" onclick="selectWords()">Select 5 words</button>
         <div id="selected-words" padding="10px" style="display:none">
             <button class="word-button" id="word0" onclick="showDef(0)"></button>
-            <div class="def-block" id="definition0" style="display:none"></div>
+            <div class="def-block" id="definition0" style="display:none">
+                <i class="fa fa-cloud" onclick="playAudio(0)"></i>
+            </div>
+
             <button class="word-button" id="word1" onclick="showDef(1)"></button>
-            <div class="def-block" id="definition1" style="display:none"></div>
+            <div class="def-block" id="definition1" style="display:none"><i class="fa fa-cloud"></i>
+                <i class="fa fa-cloud" onclick="playAudio(1)"></i>
+            </div>
+
             <button class="word-button" id="word2" onclick="showDef(2)"></button>
-            <div class="def-block" id="definition2" style="display:none"></div>
+            <div class="def-block" id="definition2" style="display:none">
+                <i class="fa fa-cloud" onclick="playAudio(2)"></i>
+            </div>
+
             <button class="word-button" id="word3" onclick="showDef(3)"></button>
-            <div class="def-block" id="definition3" style="display:none"></div>
+            <div class="def-block" id="definition3" style="display:none">
+                <i class="fa fa-cloud" onclick="playAudio(3)"></i>
+            </div>
+
             <button class="word-button" id="word4" onclick="showDef(4)"></button>
-            <div class="def-block" id="definition4" style="display:none"></div>
+            <div class="def-block" id="definition4" style="display:none">
+                <i class="fa fa-cloud" onclick="playAudio(4)"></i>
+            </div>
+
         </div>
         <div class="tale" id="tale">
             <button class="gen-tale-button">Generate Tale</button>
