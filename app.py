@@ -11,7 +11,7 @@ all_words = []
 app = Flask(__name__)
 
 # setup
-with open('data/words.txt', 'r') as f:
+with open('static/data/words.txt', 'r') as f:
     all_words = [line.strip() for line in f]
 
 openai.api_key = os.environ.get('OPENAI_KEY')
