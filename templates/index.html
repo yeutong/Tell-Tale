@@ -7,20 +7,19 @@
 <body>
     <div class="container">
         <h1>Tell Tale: A short story generator for GRE</h1>
-        <button class="generate-button" onclick="selectWords()">Select 5 words</button>
-        <div id="selected-words">
+        <button class="select-button" onclick="selectWords()">Select 5 words</button>
+        <div id="selected-words" padding="10px" style="display:none">
+            <button class="word-button" id="word0" onclick="showDef(0)"></button>
+            <div class="def-block" id="definition0" style="display:none"></div>
             <button class="word-button" id="word1" onclick="showDef(1)"></button>
-            <div id="definition1"></div>
+            <div class="def-block" id="definition1" style="display:none"></div>
             <button class="word-button" id="word2" onclick="showDef(2)"></button>
-            <div id="definition2"></div>
+            <div class="def-block" id="definition2" style="display:none"></div>
             <button class="word-button" id="word3" onclick="showDef(3)"></button>
-            <div id="definition3"></div>
+            <div class="def-block" id="definition3" style="display:none"></div>
             <button class="word-button" id="word4" onclick="showDef(4)"></button>
-            <div id="definition4"></div>
-            <button class="word-button" id="word5" onclick="showDef(5)"></button>
-            <div id="definition5"></div>
+            <div class="def-block" id="definition4" style="display:none"></div>
         </div>
-        <div id="defnitions"></div>
         <div id="tale"></div>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script type="text/javascript" src="{{url_for('static', filename='script.js')}}"></script>
