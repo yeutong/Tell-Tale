@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ChatGPT Response Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>ChatGPT Response Generator</h1>
+        <button class="generate-button" onclick="selectWords()">Select 5 words</button>
+        <div id="selected-words"></div>
+        <div id="generated-response"></div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="{{url_for('static', filename='script.js')}}"></script> 
+
+</body>
+</html>
