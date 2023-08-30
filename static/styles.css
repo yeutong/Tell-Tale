@@ -15,11 +15,7 @@
 
     .select-button, .word-button, .gen-tale-button {
         padding: 8px 16px;
-        font-size: 14px;
-    }
-
-    .tale {
-        font-size: 14px;
+        font-size: 16px;
     }
 }
 
@@ -100,7 +96,7 @@ h1 {
     padding: 10px;
     background-color: #f9f9f9;
     border-radius: 4px;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.5;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -125,10 +121,12 @@ h1 {
     margin-top: 20px;
     border: 2px solid #eaeaea; 
     padding: 20px; 
+    font-size: 14px;
     border-radius: 10px; 
     background-color: #f7f7f7; 
     font-family: Arial, sans-serif; 
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    line-height: 160%;
 }
 
 .audio-button {
