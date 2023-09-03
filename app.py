@@ -48,7 +48,7 @@ def get_def(word, use_vocabulary=True):
         return data
 @app.route('/generate_tale/<words>', methods=['GET'])
 def generate_tale(words):
-    prompt = f"Given the following five words: {words}, make a short story using all of the five words. Only reply with the story itself, with a maximum of 100 words."
+    prompt = f"Given the following five words: {words}, please create a interesting and well-organized short story set in the world of Harry Potter, incorporating the given setting and character using all of the five words. Use simple words other than those five words. Only reply with the story itself, with a maximum of 150 words."
     prompt += "\nPlease highlight the words in bold in your story using the following format: <strong>word</strong>."
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",  # Use gpt-3.5-turbo model
