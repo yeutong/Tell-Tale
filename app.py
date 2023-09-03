@@ -32,14 +32,20 @@ def get_words():
     word_and_def = dict(zip(selected_words, defs)) # dict of {word: def}
     return jsonify(word_and_def)
 
-def get_def(word):
-    # get definition of word from static/data/definitions/<word>.json
+def get_def(word, use_vocabulary=True):
     word = word.replace(' ', '_')
-    with open(f'static/data/definitions/{word}.json', 'r') as f:
-        data = json.load(f)
-        print(data)
-    return data
 
+    if not use_vocabulary:
+        # get definition of word from static/data/definitions/<word>.json
+        with open(f'static/data/definitions/{word}.json', 'r') as f:
+            data = json.load(f)
+        return data
+    
+    else:
+        # get definition of word from static/data/definitions_vocabulary/<word>.json
+        with open(f'static/data/definitions_vocabulary/{word}.json', 'r') as f:
+            data = json.load(f)
+        return data
 @app.route('/generate_tale/<words>', methods=['GET'])
 def generate_tale(words):
     prompt = f"Given the following five words: {words}, make a short story using all of the five words. Only reply with the story itself, with a maximum of 100 words."
