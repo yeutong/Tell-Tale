@@ -3,7 +3,6 @@ import json
 import openai
 from flask import Flask, render_template, jsonify
 import os
-import transformerlens
 
 # global var
 current_words = []
